@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def telaPrincipal(request):
+    return render(request, 'speakermain/index.html')
