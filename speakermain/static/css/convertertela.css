@@ -1,0 +1,120 @@
+h1 a{
+    color: #ffffff;
+    font-family: Poppins;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 30pt;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    vertical-align:auto;
+    
+}
+
+.page-header {
+    background-color: #C25100;
+    margin: -20px;
+    padding: 20px 20px 20px 40px;
+}
+
+h2 a {
+    font-family: Poppins;
+}
+h1 b {
+    font-family: Poppins;
+    font-weight: normal;
+    font-size: 20pt;
+    padding-left: 40px;
+}
+
+.userButton {
+    float: right;
+    padding-right: 20;
+    margin-top: 40px;
+    margin-right: 20px;
+    padding-top: 40;
+    color:#ffffff;
+    font-family: Poppins;
+    font-size: 20pt;
+}
+
+.dropdown-menu {
+    max-width: 150px;
+    right: 50%;
+    transform: translateX(-50%);
+    /*left: 50%;
+    transform: translateX(-50%);*/
+  }
+  
+  .dropdown-item, .Conversor, .biblioteca {
+    display: block;
+    text-align: center;
+  }
+
+  .containerform {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.erro {
+    color: #f44336;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

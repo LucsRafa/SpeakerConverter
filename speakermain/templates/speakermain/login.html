@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SpeakerConverter</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="icon" type="imagem/png" href="{%static 'favicon.png'%}">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="formulario-login" method="post" action="{% url 'LoginView' %}">
+                {% csrf_token %}
+                <div>
+                    <label for="email">Nome de usuário:</label>
+                    {{form.username}}
+                </div>
+                <div>
+                    <label for="senha">Senha:</label>
+                    {{form.password}}
+                </div>
+                <button type="submit">Entrar</button>
+                <p id="mensagem-erro" class="erro"></p>
+            </form>
+        </div>
+    </main>
+
+
+</body>
+</html>

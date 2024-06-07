@@ -1,8 +1,50 @@
-{%load static%}
+{% load static %}
 <html>
     <head>
-        <title>Speaker Converter</title>
-        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" >
-        <body>Bom dia!
+        <h1><title>Biblioteca | Speaker Converter</title></h1>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'js/playerinf.js' %}"></script>
+        <link href="//fonts.googleapis.com/css?family=Poppins&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/speakermain.css' %}">
+        <link rel="icon" type="imagem/png" href="{%static 'favicon.png'%}">
+        <body>
+            <div class="userButton dropdown">
+                <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ user }} 
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class ="Conversor" href="{% url 'LoginView' %}">Biblioteca</a>
+                  <a class ="Conversor" href="{% url 'teladeconverter' %}">Converter arquivo</a>
+                  <a class="dropdown-item" href="{% url 'LogoutView' %}">Encerrar sessão</a>
+                </div>
+              </div>
+            <div class ='page-header'>
+                <h1><a href="/">Biblioteca</a></h1>
+            </div>
+            <div class ='seusaq'><p>Seus arquivos:</p></div>
+            <div class = 'list-container'>
+                {% for sfile in sfile %}
+                <li>
+                    <div class = 'arquivo'>
+                        <h2><a href="#" class="audio-link", data-id={{sfile.id}}>{{ sfile.titulo }}</a></h2>
+                        <p><strong>Feito em: </strong>{{ sfile.datacriado }}</p>
+                        <p><strong>Formato de áudio: </strong>{{sfile.formato}}<strong>  Modelo de voz: </strong>{{sfile.modelo}}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </div>
+            <div class="container">
+                <h3>Detalhes do SpeakFile</h3>
+                <div id="det"><p>Por favor, selecione um arquivo ou vá para</p><a href="{% url 'teladeconverter' %}">"{{user}} &gt&gt Converter arquivo"</a>
+
+                </div>
+                <audio id="audio-player" controls>
+                    <source id="audio-source" src="" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </body>
 </html>

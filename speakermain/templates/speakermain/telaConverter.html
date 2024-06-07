@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="{% static 'css/convertertela.css' %}">
+    <link rel="icon" type="imagem/png" href="{%static 'favicon.png'%}">
+    <h1><title>Criar Arquivo | SpeakerConverter</title></h1>
+  </head>
+<body>
+  <div class="userButton dropdown">
+    <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ user }} 
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class ="biblioteca" href="{% url 'LoginView' %}">Biblioteca</a>
+      <a class ="Conversor" href="{% url 'teladeconverter' %}">Converter arquivo</a>
+      <a class="dropdown-item" href="{% url 'LogoutView' %}">Encerrar sessão</a>
+    </div>
+  </div>
+  <div class ='page-header'>
+    <h1><a href="#">Converter Texto</a></h1>
+</div>
+<div class = "containerform">
+  <h1><b>Olá, {{user}}! Crie seu arquivo abaixo.</b></h1>
+  <form id="formulario-converter" method="post">
+    {% csrf_token %}
+    <div>
+      <label for="titulo">Título:</label>
+      {{form.titulo}}
+    </div>
+    <div>
+      <label for="corpo">Corpo:</label>
+      {{form.corpo}}
+    </div>
+    <div>
+      <label for="modelo">Modelo de voz:</label>
+      {{form.modelo}}
+    </div>
+    <div>
+      <label for="formato">Formato de áudio:</label>
+      {{form.formato}}
+    </div>
+    <!--{{ form.as_p }}-->
+    <button type="submit">Salvar e retornar à Biblioteca</button>
+  </form>
+</div>
+</body>
+</html>

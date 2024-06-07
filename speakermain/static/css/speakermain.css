@@ -1,0 +1,88 @@
+
+h1 a{
+    color: #ffffff;
+    font-family: Poppins;
+}
+
+h2 a {
+    font-family: Poppins;
+}
+
+.page-header {
+    background-color: #C25100;
+    margin: -20;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    max-width: 140ch;
+    padding-right: 30px;
+    margin-top: -500;
+    font-family: Poppins;
+    font-size: 20pt;
+}
+#det h4 {
+    font-family: Poppins;
+    font-size: 25pt;
+    color: #C25100;
+}
+.userButton {
+    float: right;
+    padding-right: 20;
+    padding-top: 40;
+    color:#ffffff;
+    font-family: Poppins;
+    font-size: 20pt;
+}
+.arquivo {
+    word-wrap:break-word;
+    max-width:50ch;
+    padding-left: 20px;
+}
+
+.seusaq {
+    padding-left: 20px;
+    padding-top: 40;
+    font-family: Poppins;
+    font-size: 20pt;
+}
+
+.list-container {
+    overflow-y: auto;
+    height: 500px;
+    list-style-type: none;
+}
+
+.dropdown-menu {
+    max-width: 150px;
+    right: 50%;
+    transform: translateX(-50%);
+    /*left: 50%;
+    transform: translateX(-50%);*/
+  }
+  
+  .dropdown-item, .Conversor, .ausor {
+    display: block;
+    text-align: center;
+  }
+
+ .container d {
+    color:#0000EE;
+ }
+
+ #det a p {
+    display: inline-display;
+ }
+
+ a .ausor {
+    display: block;
+    text-align: center;
+ }
