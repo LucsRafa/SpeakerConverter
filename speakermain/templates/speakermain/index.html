@@ -9,7 +9,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/speakermain.css' %}">
-        <link rel="icon" type="imagem/png" href="{%static 'favicon.png'%}">
+        <link rel="icon" type="imagem/png" href="{% static 'favicon.png' %}">
         <body>
             <div class="userButton dropdown">
                 <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,9 +36,10 @@
                 </li>
                 {% endfor %}
             </div>
+            
             <div class="container">
                 <h3>Detalhes do SpeakFile</h3>
-                <div id="det"><p>Por favor, selecione um arquivo ou vá para</p><a href="{% url 'teladeconverter' %}">"{{user}} &gt&gt Converter arquivo"</a>
+                <div id="det"><p>Por favor, selecione um arquivo ou vá para</p><a class="converter" href="{% url 'teladeconverter' %}">Converter arquivo</a>
 
                 </div>
                 <audio id="audio-player" controls>

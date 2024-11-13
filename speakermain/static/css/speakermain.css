@@ -9,7 +9,7 @@ h2 a {
 }
 
 .page-header {
-    background-color: #C25100;
+    background-color: #f0ad4e;
     margin: -20;
     padding: 20px 20px 20px 40px;
 }
@@ -19,6 +19,8 @@ h2 a {
     font-size: 36pt;
     text-decoration: none;
 }
+
+
 .container {
     display: flex;
     flex-direction: column;
@@ -47,6 +49,29 @@ h2 a {
     max-width:50ch;
     padding-left: 20px;
 }
+.converter {
+    display: inline-block;
+    background-color: #285e8e;
+    color: white;
+    text-decoration: none; /* Remove sublinhado */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa a fonte mais espessa */
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none; /* Remove borda ao clicar */
+}
+.converter:hover {
+    background-color: #214b70; /* Efeito hover para melhor feedback */
+    text-decoration: none;
+}
+.converter:active {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* Efeito de botão pressionado */
+    transform: translateY(2px); /* Dá a sensação de clique */
+    text-decoration: none;
+}
 
 .seusaq {
     padding-left: 20px;
@@ -65,8 +90,8 @@ h2 a {
     max-width: 150px;
     right: 50%;
     transform: translateX(-50%);
-    /*left: 50%;
-    transform: translateX(-50%);*/
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .dropdown-item, .Conversor, .ausor {
@@ -86,3 +111,9 @@ h2 a {
     display: block;
     text-align: center;
  }
+ .conteudo-principal {
+    display: flex;
+    align-items: flex-start; /* Alinha os elementos ao topo */
+    height: 100vh; /* Define a altura como a altura total da tela */
+}
+

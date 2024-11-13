@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #1A313F;
 }
 
 header {
@@ -13,15 +13,26 @@ header {
 h1 {
     font-size: 24px;
     font-weight: bold;
+    font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:#FEFFFF;
 }
+    .fonte{
+    font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:#ccc;
+    }
+
 
 .container {
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #FEFFFF;
+    border-radius: 14px;
+    box-shadow: 0 2px 13px #f89320;
 }
 
 textarea {
@@ -40,14 +51,17 @@ textarea {
 }
 
 button {
+   
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    width: 200px;
 }
 
 #btn-converter {
-    background-color: #4CAF50;
+    background-color: #e5991e;
     color: white;
 }
 
@@ -83,25 +97,35 @@ form div {
 
 form label {
     margin-bottom: 5px;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  color: #1A313F;
 }
 
 form input {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px inset #1A313F;
     border-radius: 5px;
-    width: 100%;
+    width: 98%;
 }
 
 form button {
-    background-color: #4CAF50;
+    background-color: #eaa000;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+   
 }
 
 .erro {
     color: #f44336;
     margin-top: 10px;
 }
+
+    
