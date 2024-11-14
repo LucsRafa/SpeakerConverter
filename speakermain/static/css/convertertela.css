@@ -1,3 +1,8 @@
+body{
+    background-color: #1A313F;
+}
+
+
 h1 a{
     color: #ffffff;
     font-family: Poppins;
@@ -14,7 +19,7 @@ h1 a{
 }
 
 .page-header {
-    background-color: #C25100;
+    background-color: #F89320;
     margin: -20px;
     padding: 20px 20px 20px 40px;
 }
@@ -78,13 +83,13 @@ form label {
 
 form input {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px double #1A313F;
     border-radius: 5px;
     width: 100%;
 }
 
 form button {
-    background-color: #4CAF50;
+    background-color: #F89320;
     color: white;
     border: none;
     padding: 10px;
@@ -101,7 +106,7 @@ textarea {
     width: 100%;
     height: 200px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 5px double #1A313F;
     border-radius: 5px;
     resize: vertical;
 }
@@ -117,4 +122,14 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+.safe{
+    
+        padding: 10px 20px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        text-align: center;
+        width: 300px;
+    
 }

@@ -26,7 +26,7 @@
     <h1><a href="#">Converter Texto</a></h1>
 </div>
 <div class = "containerform">
-  <h1><b>Olá, {{user}}! Crie seu arquivo abaixo.</b></h1>
+ <center> <h1><b>Olá, {{user}}! Crie seu arquivo abaixo.</b></h1></center>
   <form id="formulario-converter" method="post">
     {% csrf_token %}
     <div>
@@ -46,7 +46,7 @@
       {{form.formato}}
     </div>
     <!--{{ form.as_p }}-->
-    <button type="submit">Salvar e retornar à Biblioteca</button>
+   <center> <button class= "safe" type="submit">Salvar e retornar à Biblioteca</button></center>
   </form>
 </div>
 </body>

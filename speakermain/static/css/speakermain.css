@@ -1,4 +1,7 @@
 
+body{
+    background-color: #FEFFFF;
+}
 h1 a{
     color: #ffffff;
     font-family: Poppins;
@@ -9,7 +12,7 @@ h2 a {
 }
 
 .page-header {
-    background-color: #f0ad4e;
+    background-color: #F89320;
     margin: -20;
     padding: 20px 20px 20px 40px;
 }
@@ -45,9 +48,12 @@ h2 a {
     font-size: 20pt;
 }
 .arquivo {
-    word-wrap:break-word;
-    max-width:50ch;
+    background-color: #1A313F;
+    color: #FEFFFF;
+   width: 350px;
+    max-width:100ch;
     padding-left: 20px;
+    border-top: 3px solid #F89320;
 }
 .converter {
     display: inline-block;
@@ -74,8 +80,8 @@ h2 a {
 }
 
 .seusaq {
-    padding-left: 20px;
-    padding-top: 40;
+    padding-left: 10px;
+    padding-top: 4;
     font-family: Poppins;
     font-size: 20pt;
 }
@@ -117,3 +123,27 @@ h2 a {
     height: 100vh; /* Define a altura como a altura total da tela */
 }
 
+.arquivos{
+    height: 100vh;
+    margin: 20px 10px;
+}
+
+.linha-vertical {
+    width: 2px;
+    background-color: #F89320; /* Cor da linha */
+    height: 100%; /* Garante que a linha ocupe toda a altura do container */
+    align-self: stretch; /* Expande a linha para ter a altura dos elementos adjacentes */
+    margin: 20px 1px;/* Adiciona espaçamento horizontal */
+}
+
+.detalhes{
+
+    display: flex;
+    flex-direction: column;
+    align-items:stretch ; /* Alinha os elementos ao topo */
+    height: 50vh; /* Altura da tela inteira */
+    padding: 100px 100px;
+}
+.list-container{
+    background-color: #1A313F;
+}

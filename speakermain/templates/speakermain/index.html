@@ -24,28 +24,38 @@
             <div class ='page-header'>
                 <h1><a href="/">Biblioteca</a></h1>
             </div>
-            <div class ='seusaq'><p>Seus arquivos:</p></div>
-            <div class = 'list-container'>
-                {% for sfile in sfile %}
-                <li>
-                    <div class = 'arquivo'>
-                        <h2><a href="#" class="audio-link", data-id={{sfile.id}}>{{ sfile.titulo }}</a></h2>
-                        <p><strong>Feito em: </strong>{{ sfile.datacriado }}</p>
-                        <p><strong>Formato de áudio: </strong>{{sfile.formato}}<strong>  Modelo de voz: </strong>{{sfile.modelo}}</p>
+            <div class="conteudo-principal">
+                <div class="arquivos">
+                   <div class="coloraqs">
+                    <div class='seusaq'><p>Seus arquivos:</p></div>
+                    <div class='list-container'>
+                        {% for sfile in sfile %}
+                        <li>
+                            <div class='arquivo'>
+                                <h2><a href="#" class="audio-link" data-id="{{ sfile.id }}">{{ sfile.titulo }}</a></h2>
+                                <p><strong>Feito em: </strong>{{ sfile.datacriado }}</p>
+                                <p><strong>Formato de áudio: </strong>{{ sfile.formato }} <strong>Modelo de voz: </strong>{{ sfile.modelo }}</p>
+                            </div>
+                        </li>
+                        {% endfor %}
                     </div>
-                </li>
-                {% endfor %}
-            </div>
-            
-            <div class="container">
-                <h3>Detalhes do SpeakFile</h3>
-                <div id="det"><p>Por favor, selecione um arquivo ou vá para</p><a class="converter" href="{% url 'teladeconverter' %}">Converter arquivo</a>
-
                 </div>
-                <audio id="audio-player" controls>
-                    <source id="audio-source" src="" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+            </div>
+                <!-- Linha vertical -->
+                <div class="linha-vertical"></div>
+            
+                <div class="detalhes">
+                    <!-- Conteúdo da seção 'detalhes' -->
+                    <h3>Detalhes do SpeakFile</h3>
+                    <div id="det">
+                        <p>Por favor, selecione um arquivo ou vá para </p>
+                        <a class="converter" href="{% url 'teladeconverter' %}">Converter arquivo</a>
+                    </div>
+                    <audio id="audio-player" controls>
+                        <source id="audio-source" src="" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
         </body>
 </html>
