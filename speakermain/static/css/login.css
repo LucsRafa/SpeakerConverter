@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Merienda&family=Modak&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -7,7 +9,7 @@ body {
 
 header {
     background-color: #FFA726;
-    padding: 10px;
+    padding: 1px;
 
     align-items: center;
     color: #1A313F;
@@ -27,6 +29,27 @@ header .logo {
       "wdth" 100;
       font-size: 28px;
       color: #FEFFFF;
+}
+p{
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+.image-logo{
+    width: 70px;
+    height: 70px;
+    background-image: url(./logoFundoAzul.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: -420px;
+
+}
+.logo{
+    position: relative;
+    right: -25px;
 }
 
 a{
@@ -77,12 +100,12 @@ main {
     
         width: 200px;
         height: 200px;
-        background-image: url(./logo\ SC.jpeg); /* Substitua pelo caminho correto da imagem */
+        background-image: url(./logoSC.png); /* Substitua pelo caminho correto da imagem */
         background-size: cover; /* Ajusta a imagem para cobrir o elemento */
         background-position: center; /* Centraliza a imagem */
         background-repeat: no-repeat; /* Evita repetição da imagem */
         position: relative;
-        top: 60px; 
+        top: 119px; 
         
     
     
@@ -92,7 +115,7 @@ main {
 .right-section {
     width: 400px;
     background-color: #FEFFFF;
-    padding: 60px 50px;
+    padding: 70px 50px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -168,11 +191,19 @@ form input {
     display: block;
     /* margin-block-start: 1em; */
     /* margin-block-end: 1em; */
-    margin-inline-start: 210px;
-    margin-inline-end: 68px;
+    margin-inline-start: 180px;
+    margin-inline-end: 100px;
     unicode-bidi: isolate;
     color: #FEFFFF;
+    position: relative;
+    top: -50px;
+ 
+
+   
 }
 .obj2{
     color: #FEFFFF;
+    margin-top: -45PX;
+    margin-left: 39px
+    
 }
