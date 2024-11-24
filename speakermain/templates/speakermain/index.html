@@ -1,8 +1,8 @@
 {% load static %}
 <html>
     <head>
-        <h1><title>Biblioteca | Speaker Converter</title></h1>
-        <link rel="icon" type="imagem/png" href="{%static 'favicon.png'%}">
+        <title>Dashboard | Speaker Converter</title>
+        <link rel="icon" type="imagem/png" href="{% static 'favicon.png' %}">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="{% static 'js/playerinf.js' %}"></script>
         <link href="//fonts.googleapis.com/css?family=Poppins&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -10,53 +10,68 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/speakermain.css' %}">
-        
-        <body>
-            <div class="userButton dropdown">
-                <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ user }} 
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class ="Conversor" href="{% url 'LoginView' %}">Biblioteca</a>
-                  <a class ="Conversor" href="{% url 'teladeconverter' %}">Converter arquivo</a>
-                  <a class="dropdown-item" href="{% url 'LogoutView' %}">Encerrar sessão</a>
-                </div>
-              </div>
-            <div class ='page-header'>
-                <h1><a href="/">Biblioteca</a></h1>
+        <style>
+            #search-bar {
+                margin: 10px 0;
+                width: 95%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="userButton dropdown">
+            <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user }} 
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="Conversor" href="{% url 'LoginView' %}">Dashboard</a>
+                <a class="Conversor" href="{% url 'teladeconverter' %}">Converter arquivo</a>
+                <a class="dropdown-item" href="{% url 'LogoutView' %}">Encerrar sessão</a>
             </div>
-            <div class="conteudo-principal">
-                <div class="arquivos">
-                   <div class="coloraqs">
-                    <div class='seusaq'><p>Seus arquivos:</p></div>
-                    <div class='list-container'>
+        </div>
+        <div class="page-header">
+            <h1><a href="/">Dashboard</a></h1>
+        </div>
+        <div class="conteudo-principal">
+            <div class="arquivos">
+                <div class="coloraqs">
+                    <div class="seusaq">
+                        <p>Biblioteca:</p>
+                        <input type="text" id="search-bar" class="form-control" placeholder="Pesquisar arquivos...">
+                    </div>
+                    <div class="list-container">
                         {% for sfile in sfile %}
                         <li>
-                            <div class='arquivo'>
+                            <div class="arquivo">
                                 <h2><a href="#" class="audio-link" data-id="{{ sfile.id }}">{{ sfile.titulo }}</a></h2>
                                 <p><strong>Feito em: </strong>{{ sfile.datacriado }}</p>
-                                <p><strong>Formato de áudio: </strong>{{ sfile.formato }} <strong>Modelo de voz: </strong>{{ sfile.modelo }}</p>
+                                <p class="modev"><strong>Formato de áudio: </strong>{{ sfile.formato }}</p>
+                                <p class="modev"><strong>Modelo de voz: </strong>{{ sfile.modelo }}</p>
                             </div>
                         </li>
                         {% endfor %}
                     </div>
                 </div>
             </div>
-                <!-- Linha vertical -->
-                <div class="linha-vertical"></div>
-            
-                <div class="detalhes">
-                    <!-- Conteúdo da seção 'detalhes' -->
-                    <h3>Detalhes do SpeakFile</h3>
-                    <div id="det">
-                        <p>Por favor, selecione um arquivo ou vá para </p>
-                        <a class="converter" href="{% url 'teladeconverter' %}">Converter arquivo</a>
-                    </div>
-                    <audio id="audio-player" controls>
-                        <source id="audio-source" src="" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
+            <!-- Linha vertical -->
+            <div class="linha-vertical"></div>
+            <div class="detalhes">
+                <!-- Conteúdo da seção 'detalhes' -->
+                <h3>Detalhes do SpeakFile</h3>
+                <div id="det">
+                    <p>Por favor, selecione um arquivo ou clique no botão abaixo</p>
+                    <a class="converter" href="{% url 'teladeconverter' %}">Converter arquivo</a>
                 </div>
+                <audio id="audio-player" controls>
+                    <source id="audio-source" src="" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
             </div>
-        </body>
+        </div>
+        <!-- Inclua o arquivo JavaScript -->
+        <script src="{% static 'js/filtroPesquisa.js' %}"></script>
+    </body>
 </html>
