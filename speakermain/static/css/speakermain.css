@@ -55,7 +55,7 @@ h2 a {
     color: #FEFFFF;
    width: 350px;
     max-width:100ch;
-    padding-left: 20px;
+    padding-left: 10px;
     border-top: 3px solid #F89320;
 }
 .converter {
@@ -100,7 +100,7 @@ h2 a {
     right: 50%;
     transform: translateX(-50%);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-79%);
   }
   
   .dropdown-item, .Conversor, .ausor {
@@ -127,8 +127,10 @@ h2 a {
 }
 
 .arquivos{
-    height: 100vh;
-    margin: 20px 10px;
+    
+        height: 100vh;
+        margin: 18px 0px;
+        background-color: #1A313F;
 }
 
 .linha-vertical {
@@ -166,4 +168,20 @@ h2 a {
     border: 1px solid #F89320;
     border-radius: 5px;
     font-size: 14px;
+}
+.btn-delete {
+    background-color: #d9534f; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background-color: #c9302c;
+}
+.fontBiblio{
+    color: #FEFFFF;
 }

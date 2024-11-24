@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from .forms import formSpeakFile
+from django.views.decorators.csrf import csrf_exempt  # Aqui está a importação que estava faltando
 
 import random
 import string
@@ -53,7 +54,7 @@ def logout_view(request):
     return redirect(telaPrincipal)
 
 @login_required
-def telaCoverter (request):
+def telaCoverter(request):
     if request.method == 'POST':
         form = formSpeakFile(request.POST)
         if form.is_valid():
@@ -63,4 +64,16 @@ def telaCoverter (request):
             return redirect(telaPrincipal)
     else:
         form = formSpeakFile()
-    return render(request, 'speakermain/telaConverter.html', {'form':    form})
+    return render(request, 'speakermain/telaConverter.html', {'form': form})
+
+@csrf_exempt  # Permite requisições sem CSRF para testes (use com cuidado em produção)
+def delete_file(request):
+    if request.method == 'POST':
+        file_id = request.POST.get('id')
+        try:
+            file = SpeakFile.objects.get(id=file_id)
+            file.delete()  # Exclui o arquivo do banco de dados
+            return JsonResponse({'status': 'success', 'message': 'Arquivo excluído com sucesso!'})
+        except SpeakFile.DoesNotExist:
+            return JsonResponse({'status': 'error', 'message': 'Arquivo não encontrado!'}, status=404)
+    return JsonResponse({'status': 'error', 'message': 'Método inválido!'}, status=400)
