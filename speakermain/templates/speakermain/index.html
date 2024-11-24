@@ -10,16 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/speakermain.css' %}">
-        <style>
-            #search-bar {
-                margin: 10px 0;
-                width: 95%;
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                font-size: 14px;
-            }
-        </style>
+      
     </head>
     <body>
         <div class="userButton dropdown" style="display: flex; justify-content: flex-start;">
@@ -49,10 +40,12 @@
                         <li>
                             <div class="arquivo">
                                 <h2><a href="#" class="audio-link" data-id="{{ sfile.id }}">{{ sfile.titulo }}</a></h2>
-                                <p><strong>Feito em: </strong>{{ sfile.datacriado }}</p>
-                                <p class="modev"><strong>Formato de áudio: </strong>{{ sfile.formato }}</p>
-                                <p class="modev"><strong>Modelo de voz: </strong>{{ sfile.modelo }}</p>
-                                <button class="btn-delete" data-id="{{ sfile.id }}">Excluir</button>
+                                <div class="info-container">
+                                    <p><strong>Feito em: </strong>{{ sfile.datacriado }}</p>
+                                    <p class="modev"><strong>Formato de áudio: </strong>{{ sfile.formato }}</p>
+                                    <p class="modev"><strong>Modelo de voz: </strong>{{ sfile.modelo }}</p>
+                                    <button class="btn-delete" data-id="{{ sfile.id }}">Excluir</button>
+                                </div>
                             </div>
                         </li>
                         {% endfor %}
