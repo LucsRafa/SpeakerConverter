@@ -1,4 +1,4 @@
-<!-- HTML -->
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="pt-br">
@@ -51,7 +51,7 @@
                     <center><button type="submit" class="continue-btn">Entrar</button></center>
                     <p id="mensagem-erro" class="erro"></p>
                 </form>
-                <p>Não tem uma conta? <a href="#">Registre-se</a></p>
+                <p>Não tem uma conta? <a href="{% url 'register' %}">Registre-se</a></p>
                 <hr>
                 <div class="or">OU</div>
                 <button class="social-btn">Continuar com o Google</button>

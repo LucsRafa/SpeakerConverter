@@ -8,6 +8,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from .forms import formSpeakFile
 from django.views.decorators.csrf import csrf_exempt  # Aqui está a importação que estava faltando
+from django.contrib.auth import login
+from .forms import RegisterForm
+
 
 import random
 import string
@@ -77,3 +80,17 @@ def delete_file(request):
         except SpeakFile.DoesNotExist:
             return JsonResponse({'status': 'error', 'message': 'Arquivo não encontrado!'}, status=404)
     return JsonResponse({'status': 'error', 'message': 'Método inválido!'}, status=400)
+
+def register_view(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data["password"])
+            user.save()
+            login(request, user)  # Loga o usuário automaticamente após o registro
+            return redirect("TelaPrincipal")  # Substitua pelo nome da sua página inicial
+    else:
+        form = RegisterForm()
+    return render(request, "speakermain/register.html", {"form": form})
+
