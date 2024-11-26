@@ -1,28 +1,73 @@
 {% load static %}
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar-se</title>
+    <title>Registrar-se | Speaker Converter</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="icon" type="imagem/png" href="{% static 'favicon.png' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Merienda:wght@300..900&family=Modak&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Merienda:wght@500&family=Modak&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="right-section">
-        <h2>Registrar-se</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="continue-btn">Registrar</button>
-        </form>
-    </div>
+    <header>
+        <nav>
+            <div class="logo">Speaker Converter</div>
+            <div class="image-logo"></div>
+            <ul>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Empresa</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <div class="left-section">
+                <div class="image-and-text">
+                    <div class="image-placeholder"></div>
+                    <p class="obj1">O aplicativo "Speaker Converter" foi desenvolvido para facilitar o acesso à informação para pessoas com deficiência visual e estudantes com dificuldades de leitura, promovendo inclusão digital e autonomia.</p>
+                    <p class="obj2">Inspirado pela Lei Brasileira de Inclusão, o projeto visa criar um site intuitivo e acessível que converte textos curtos em áudio, permitindo o download dos arquivos ou o armazenamento na nuvem. Com uma interface amigável, o sistema busca reduzir barreiras de leitura e ampliar oportunidades de aprendizado e inclusão. Utilizando tecnologias como Django e a API Amazon Polly para conversão de texto em áudio, o aplicativo oferece uma experiência auditiva de qualidade e funcionalidades que auxiliam tanto na educação quanto no lazer dos usuários, expandindo o acesso à informação de forma prática e inclusiva.</p>
+                </div>
+            </div>
+            <div class="right-section">
+                <center><h2>REGISTRAR-SE</h2></center>
+
+                <!-- Exibindo Mensagens de Erro -->
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            <p class="error-message">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <form id="formulario-registro" method="post" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    <div>
+                        <label for="{{ form.username.id_for_label }}">Usuário:</label>
+                        {{ form.username }}
+                    </div>
+                    <div>
+                        <label for="{{ form.email.id_for_label }}">Email:</label>
+                        {{ form.email }}
+                    </div>
+                    <div>
+                        <label for="{{ form.password1.id_for_label }}">Senha:</label>
+                        {{ form.password1 }}
+                    </div>
+                    <div>
+                        <label for="{{ form.password2.id_for_label }}">Confirmar Senha:</label>
+                        {{ form.password2 }}
+                    </div>
+                    <center><button type="submit" class="continue-btn">Registrar</button></center>
+                </form>
+                <p>Já tem conta? <a href="{% url 'LoginView' %}">Entrar</a></p>
+
+                <hr>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

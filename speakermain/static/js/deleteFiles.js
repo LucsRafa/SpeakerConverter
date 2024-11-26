@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((data) => {
             if (data.status === "success") {
               alert(data.message);
-              // Remover o item do DOM
-              button.closest("li").remove(); // Remove o item de lista correspondente
+              location.reload(); // Atualiza a página
             } else {
               alert(data.message); // Exibe mensagem de erro caso falhe
             }

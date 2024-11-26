@@ -10,7 +10,7 @@ from .forms import formSpeakFile
 from django.views.decorators.csrf import csrf_exempt  # Aqui está a importação que estava faltando
 from django.contrib.auth import login
 from .forms import RegisterForm
-
+from django.contrib import messages
 
 import random
 import string
@@ -82,15 +82,16 @@ def delete_file(request):
     return JsonResponse({'status': 'error', 'message': 'Método inválido!'}, status=400)
 
 def register_view(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            user.set_password(form.cleaned_data["password"])
-            user.save()
-            login(request, user)  # Loga o usuário automaticamente após o registro
-            return redirect("TelaPrincipal")  # Substitua pelo nome da sua página inicial
+            user = form.save()  # Salva o novo usuário no banco de dados
+            login(request, user)  # Autentica o novo usuário
+            messages.success(request, f"Bem-vindo, {user.username}! Você foi autenticado automaticamente.")
+            return redirect('TelaPrincipal')  # Redireciona para a página principal ou dashboard
+        else:
+            messages.error(request, 'Há um erro no formulário. Verifique as informações e tente novamente.')
     else:
         form = RegisterForm()
-    return render(request, "speakermain/register.html", {"form": form})
 
+    return render(request, "speakermain/register.html", {"form": form})

@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from .views import register_view
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('', views.telaPrincipal, name='TelaPrincipal'),
