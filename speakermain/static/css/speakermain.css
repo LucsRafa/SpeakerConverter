@@ -194,6 +194,11 @@ p {
 }
 h3 {
   color: #f89320;
+  text-decoration: none;
+  font-family: "Knewave", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
 }
 audio,
 canvas,
@@ -212,4 +217,10 @@ video {
 }
 a{
   color: #f89320;
+}
+.btn-lg, .btn-group-lg>.btn {
+  padding: 16px 26px;
+  font-size: 23px;
+  line-height: 1.33;
+  border-radius: 6px;
 }
