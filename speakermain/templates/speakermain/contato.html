@@ -1,0 +1,103 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Speaker Converter</title>
+    <link rel="stylesheet" href="{% static 'css/contato.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="imagem/png" href="{% static 'favicon.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Speaker Converter</div>
+            <div class="image-logo"></div>
+            <ul>
+                <li><a href="{% url 'LoginView' %}">Sobre</a></li>
+                <li><a href="{% url 'empresa' %}">Empresa</a></li>
+                <li><a href="{% url 'contato' %}">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="content">
+            <h2>Equipe:</h2>
+            <div class="team-container">
+                <div class="team-member">
+                   <center> <div class="photo member1"></div></center>
+                    <p>Lucas Ladislau</p>
+                    <div class="contact-links">
+                        <a href="Lucas.ladislau@fatec.sp.gov.br">Email</a>
+                        <a href="https://github.com/LucsRafa" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/lucas-ladislau-730750240/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <center> <div class="photo member2"></div></center>
+                    <p>Kaua Asher</p>
+                    <div class="contact-links">
+                        <a href="kaua.silva01@fatec.sp.gov.br">Email</a>
+                        <a href="https://github.com/kauaasher" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/member2" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="team-member">
+                   <center> <div class="photo member3"></div></center>
+                    <p>Pedro Cavalcante</p>
+                    <div class="contact-links">
+                        <a href="pedro.silva282@fatc.sp.gov.br">Email</a>
+                        <a href="https://github.com/daysources" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/pedro-henrique-cavalcante-da-silva-8a038829a/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <center><div class="photo member4"></div></center>
+                    <p>Richard Godeia</p>
+                    <div class="contact-links">
+                        <a href="richard.santos19@fatec.sp.gov.br">Email</a>
+                        <a href="https://github.com/MerlinGxS" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/richard-godeia-417a07168/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-section">
+                <center><h2 class="log">LOGIN</h2></center>
+                <form id="formulario-login" method="post" action="{% url 'contato' %}">
+                    {% csrf_token %}
+                    <div>
+                        <label for="id_username">Usuário:</label>
+                        {{ form.username }}
+                    </div>
+                    <div>
+                        <label for="senha">Senha:</label>
+              <div class="password-container">
+                <input type="password" id="id_password" name="password" class="form-control" />
+                <i class="eye-icon fa fa-eye" id="eye-icon" onclick="togglePassword()"></i>
+                    </div>
+                    <center>
+                        <button type="submit" class="continue-btn">Entrar</button>
+                    </center>
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li class="erro">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </form>
+                <center><p class="log">
+                    Não tem uma conta? <a href="{% url 'register' %}">Registre-se</a>
+                </p></center>
+                <hr>
+            </div>
+            
+         </section>
+    </main>
+    <script src="{% static 'js/eyeToggle.js' %}"></script>
+</body>
+</html>

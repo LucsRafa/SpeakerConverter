@@ -1,0 +1,76 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empresa | Speaker Converter</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="imagem/png" href="{% static 'favicon.png' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Speaker Converter</div>
+        <div class="image-logo"></div>
+        <ul>
+          <li><a href="{% url 'LoginView' %}">Sobre</a></li>
+          <li><a href="{% url 'empresa' %}">Empresa</a></li>
+          <li><a href="{% url 'contato' %}">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="content">
+        <div class="left-section">
+          <div class="image-and-text">
+            <div class="image-placeholder"></div>
+            <p class="obj1">
+              O aplicativo "Speaker Converter" foi desenvolvido para facilitar o
+              acesso à informação para pessoas com deficiência visual e
+              estudantes com dificuldades de leitura, promovendo inclusão
+              digital e autonomia.
+            </p>
+            <p class="obj2">
+              Inspirado pela Lei Brasileira de Inclusão, o projeto visa criar um
+              site intuitivo e acessível que converte textos curtos em áudio,
+              permitindo
+            </p>
+          </div>
+        </div>
+        <div class="right-section">
+          <center><h2>LOGIN</h2></center>
+          <form id="formulario-login" method="post" action="{% url 'empresa' %}">
+            {% csrf_token %}
+            <div>
+                <label for="email">Usuário:</label>
+                {{ form.username }}
+            </div>
+            <div>
+              <label for="senha">Senha:</label>
+              <div class="password-container">
+                <input type="password" id="id_password" name="password" class="form-control" />
+                <i class="eye-icon fa fa-eye" id="eye-icon" onclick="togglePassword()"></i>
+              </div>
+            </div>
+            <center>
+                <button type="submit" class="continue-btn">Entrar</button>
+            </center>
+            <p id="mensagem-erro" class="erro"></p>
+        </form>
+        <center> <p>
+          Não tem uma conta? <a href="{% url 'register' %}">Registre-se</a>
+        </p></center>
+          <hr />
+        </div>
+      </section>
+    </main>
+    <script src="{% static 'js/eyeToggle.js' %}"></script>
+  </body>
+</html>

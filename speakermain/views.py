@@ -54,7 +54,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect(telaPrincipal)
+    return redirect('TelaPrincipal')
 
 @login_required
 def telaCoverter(request):
@@ -95,3 +95,51 @@ def register_view(request):
         form = RegisterForm()
 
     return render(request, "speakermain/register.html", {"form": form})
+
+
+def empresa_view(request):
+    # Se o usuário já estiver autenticado, redireciona para a tela principal
+    if request.user.is_authenticated:
+        return redirect('TelaPrincipal')  # Substitua pelo nome correto da URL da tela principal
+
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('TelaPrincipal')  # Redireciona para a tela principal após login bem-sucedido
+            else:
+                messages.error(request, "Usuário ou senha inválidos.")
+        else:
+            messages.error(request, "Erro ao processar o formulário. Verifique as informações e tente novamente.")
+    else:
+        form = AuthenticationForm()
+
+    # Renderiza a página com o formulário
+    return render(request, 'speakermain/empresa.html', {'form': form})
+
+def contato_view(request):
+    # Se o usuário já estiver autenticado, redireciona para a tela principal
+    if request.user.is_authenticated:
+        return redirect('TelaPrincipal')  # Substitua pelo nome correto da URL
+
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('TelaPrincipal')  # Redireciona após login
+            else:
+                messages.error(request, "Usuário ou senha inválidos.")
+        else:
+            messages.error(request, "Erro ao processar o formulário. Verifique as informações e tente novamente.")
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'speakermain/contato.html', {'form': form})
