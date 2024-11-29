@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,6 +53,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Adicionando middleware ao final da lista
+MIDDLEWARE += ['django.contrib.messages.middleware.MessageMiddleware']
 
 ROOT_URLCONF = 'mysite.urls'
 
@@ -135,3 +140,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_URL = 'LoginView'
 LOGIN_REDIRECT_URL = 'TelaPrincipal'  # Redireciona para a página principal após login
 
+# Configuração do framework de mensagens
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}

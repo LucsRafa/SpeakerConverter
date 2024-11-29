@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth.views import LoginView, LogoutView
+from .views import reset_password_form
 
 urlpatterns = [
     path('', views.telaPrincipal, name='TelaPrincipal'),
@@ -12,4 +13,5 @@ urlpatterns = [
     path("register/", views.register_view, name="register"),
     path('empresa/', views.empresa_view, name='empresa'),
     path('contato/', views.contato_view, name='contato'),
+    path('reset_password_form/', reset_password_form, name='reset_password_form'),
 ]

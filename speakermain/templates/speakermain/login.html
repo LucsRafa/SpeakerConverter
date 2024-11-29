@@ -54,6 +54,7 @@
             </p>
           </div>
         </div>
+
         <div class="right-section">
           <center><h2>LOGIN</h2></center>
           <form id="formulario-login" method="post" action="{% url 'LoginView' %}">
@@ -75,15 +76,19 @@
             </center>
             <p id="mensagem-erro" class="erro"></p>
           </form>
-         <center> <p>
-            Não tem uma conta? <a href="{% url 'register' %}">Registre-se</a>
-          </p></center>
+          <center>
+            <p>
+              Não tem uma conta? <a href="{% url 'register' %}">Registre-se</a>
+            </p>
+            <p>
+              <a href="{% url 'reset_password_form' %}">Esqueci a senha</a>
+            </p>
+          </center>
           <hr />
         </div>
       </section>
     </main>
 
     <script src="{% static 'js/eyeToggle.js' %}"></script>
-    
   </body>
 </html>

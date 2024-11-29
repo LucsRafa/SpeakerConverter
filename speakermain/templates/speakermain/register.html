@@ -8,6 +8,7 @@
     <title>Registrar-se | Speaker Converter</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="icon" type="imagem/png" href="{% static 'favicon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,9 +17,9 @@
             <div class="logo">Speaker Converter</div>
             <div class="image-logo"></div>
             <ul>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Empresa</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="{% url 'LoginView' %}">Sobre</a></li>
+                <li><a href="{% url 'empresa' %}">Empresa</a></li>
+                <li><a href="{% url 'contato' %}">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -54,8 +55,10 @@
                         {{ form.email }}
                     </div>
                     <div>
-                        <label for="{{ form.password1.id_for_label }}">Senha:</label>
-                        {{ form.password1 }}
+                        <label for="senha">Senha:</label>
+              <div class="password-container">
+                <input type="password" id="id_password" name="password" class="form-control" />
+                <i class="eye-icon fa fa-eye" id="eye-icon" onclick="togglePassword()"></i>
                     </div>
                     <div>
                         <label for="{{ form.password2.id_for_label }}">Confirmar Senha:</label>
@@ -63,11 +66,12 @@
                     </div>
                     <center><button type="submit" class="continue-btn">Registrar</button></center>
                 </form>
-                <p>Já tem conta? <a href="{% url 'LoginView' %}">Entrar</a></p>
+                <center><p>Já tem conta? <a href="{% url 'LoginView' %}">Entrar</a></p></center>
 
                 <hr>
             </div>
         </section>
+        <script src="{% static 'js/eyeToggle.js' %}"></script>
     </main>
 </body>
 </html>

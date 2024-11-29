@@ -143,3 +143,23 @@ def contato_view(request):
         form = AuthenticationForm()
 
     return render(request, 'speakermain/contato.html', {'form': form})
+
+def reset_password_form(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        new_password = request.POST.get('new_password')
+        confirm_password = request.POST.get('confirm_password')
+
+        if new_password != confirm_password:
+            messages.error(request, 'As senhas não coincidem.')
+        else:
+            try:
+                user = User.objects.get(username=username)
+                user.set_password(new_password)
+                user.save()
+                messages.success(request, 'Senha redefinida com sucesso!')
+                return redirect('login')  # Substitua 'login' pelo nome correto da sua rota de login
+            except User.DoesNotExist:
+                messages.error(request, 'Usuário não encontrado.')
+
+    return render(request, 'speakermain/reset_password_form.html')

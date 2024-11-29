@@ -1,5 +1,4 @@
-{% load static %}
-{% load widget_tweaks %}
+{% load static %} {% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -7,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Empresa | Speaker Converter</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="icon" type="imagem/png" href="{% static 'favicon.png' %}" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
@@ -46,27 +48,45 @@
         </div>
         <div class="right-section">
           <center><h2>LOGIN</h2></center>
-          <form id="formulario-login" method="post" action="{% url 'empresa' %}">
+          <form
+            id="formulario-login"
+            method="post"
+            action="{% url 'empresa' %}"
+          >
             {% csrf_token %}
             <div>
-                <label for="email">Usuário:</label>
-                {{ form.username }}
+              <label for="email">Usuário:</label>
+              {{ form.username }}
             </div>
             <div>
               <label for="senha">Senha:</label>
               <div class="password-container">
-                <input type="password" id="id_password" name="password" class="form-control" />
-                <i class="eye-icon fa fa-eye" id="eye-icon" onclick="togglePassword()"></i>
+                <input
+                  type="password"
+                  id="id_password"
+                  name="password"
+                  class="form-control"
+                />
+                <i
+                  class="eye-icon fa fa-eye"
+                  id="eye-icon"
+                  onclick="togglePassword()"
+                ></i>
               </div>
             </div>
             <center>
-                <button type="submit" class="continue-btn">Entrar</button>
+              <button type="submit" class="continue-btn">Entrar</button>
             </center>
             <p id="mensagem-erro" class="erro"></p>
-        </form>
-        <center> <p>
-          Não tem uma conta? <a href="{% url 'register' %}">Registre-se</a>
-        </p></center>
+          </form>
+          <center>
+            <p>
+              Não tem uma conta? <a href="{% url 'register' %}">Registre-se</a>
+            </p>
+            <p>
+              <a href="{% url 'reset_password_form' %}">Esqueci a senha</a>
+            </p>
+          </center>
           <hr />
         </div>
       </section>
