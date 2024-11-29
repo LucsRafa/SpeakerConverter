@@ -46,10 +46,11 @@ h1 a {
 .userButton {
   float: right;
   padding-right: 20;
-  padding-top: 40;
+  padding-top: 33px;
   color: #ffffff;
   font-family: Poppins;
   font-size: 20pt;
+  gap: 15px;
 }
 .arquivo {
   background-color: #1a313f;
@@ -101,7 +102,7 @@ h1 a {
   right: 50%;
   transform: translateX(-50%);
   left: 50%;
-  transform: translateX(-79%);
+  transform: translateX(31%);
 }
 
 .dropdown-item,
@@ -224,3 +225,20 @@ a{
   line-height: 1.33;
   border-radius: 6px;
 }
+.converter.ml-3{
+
+  display: inline-block;
+  background-color: #f89320;
+  color: white;
+  text-decoration: none; /* Remove sublinhado */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 25px; /* Tamanho da fonte */
+  font-weight: bold; /* Deixa a fonte mais espessa */
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  outline: none; /* Remove borda ao clicar */
+
+}
+

@@ -13,16 +13,30 @@
       
     </head>
     <body>
-        <div class="userButton dropdown" style="display: flex; justify-content: flex-start;">
-            <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ user }} 
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="Conversor" href="{% url 'LoginView' %}">Dashboard</a>
-                <a class="Conversor" href="{% url 'teladeconverter' %}">Converter arquivo</a>
-                <a class="dropdown-item" href="{% url 'LogoutView' %}">Encerrar sessão</a>
-            </div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+    <div class="userButton dropdown" style="display: flex; justify-content: flex-end; align-items: center;">
+        
+        <a class="converter ml-3" href="{% url 'teladeconverter' %}" style="margin-left: 15px;">Converter arquivo</a>
+        
+        <!-- Botão Dropdown -->
+        <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ user }}
+        </button>
+        <!-- Menu com Encerrar Sessão -->
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'ExcluirContaView' %}">Excluir conta</a>
+            <a class="dropdown-item" href="{% url 'LogoutView' %}">Encerrar sessão</a>
         </div>
+       
+    </div>
+    
         
         </div>
         <div class="page-header">

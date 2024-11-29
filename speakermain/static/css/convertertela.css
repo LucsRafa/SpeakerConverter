@@ -37,18 +37,19 @@ h1 b {
 .userButton {
     float: right;
     padding-right: 20;
-    margin-top: 40px;
+    margin-top: 29px;
     margin-right: 20px;
     padding-top: 40;
     color:#ffffff;
     font-family: Poppins;
     font-size: 20pt;
+    gap: 15px;
 }
 
 .dropdown-menu {
     max-width: 150px;
     right: 50%;
-    transform: translateX(-50%);
+    transform: translateX(111%);
     /*left: 50%;
     transform: translateX(-50%);*/
   }
@@ -133,3 +134,26 @@ button {
         width: 300px;
     
 }
+.btn-lg, .btn-group-lg>.btn {
+    padding: 16px 26px;
+    font-size: 23px;
+    line-height: 1.33;
+    border-radius: 6px;
+  }
+  .biblioteca.ml-3{
+
+    display: inline-block;
+    background-color: #f89320;
+    color: white;
+    text-decoration: none; /* Remove sublinhado */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa a fonte mais espessa */
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none; /* Remove borda ao clicar */
+  
+  }
+  

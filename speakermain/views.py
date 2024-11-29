@@ -11,6 +11,8 @@ from django.views.decorators.csrf import csrf_exempt  # Aqui está a importaçã
 from django.contrib.auth import login
 from .forms import RegisterForm
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import View
 
 import random
 import string
@@ -87,10 +89,12 @@ def register_view(request):
         if form.is_valid():
             user = form.save()  # Salva o novo usuário no banco de dados
             login(request, user)  # Autentica o novo usuário
-            messages.success(request, f"Bem-vindo, {user.username}! Você foi autenticado automaticamente.")
             return redirect('TelaPrincipal')  # Redireciona para a página principal ou dashboard
         else:
-            messages.error(request, 'Há um erro no formulário. Verifique as informações e tente novamente.')
+            # Exibindo os erros no console para depuração
+            print(form.errors)  # Isso vai mostrar os erros no console para você entender o que deu errado
+
+           
     else:
         form = RegisterForm()
 
@@ -163,3 +167,9 @@ def reset_password_form(request):
                 messages.error(request, 'Usuário não encontrado.')
 
     return render(request, 'speakermain/reset_password_form.html')
+
+class ExcluirContaView(LoginRequiredMixin, View):
+    def get(self, request):
+        user = request.user
+        user.delete()
+        return redirect('TelaPrincipal')  

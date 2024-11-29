@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Empresa | Speaker Converter</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/login2.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -23,7 +23,7 @@
         <div class="image-logo"></div>
         <ul>
           <li><a href="{% url 'LoginView' %}">Sobre</a></li>
-          <li><a href="{% url 'empresa' %}">Empresa</a></li>
+          <li><a href="{% url 'empresa' %}">Projeto</a></li>
           <li><a href="{% url 'contato' %}">Contato</a></li>
         </ul>
       </nav>
@@ -34,15 +34,20 @@
           <div class="image-and-text">
             <div class="image-placeholder"></div>
             <p class="obj1">
-              O aplicativo "Speaker Converter" foi desenvolvido para facilitar o
-              acesso à informação para pessoas com deficiência visual e
-              estudantes com dificuldades de leitura, promovendo inclusão
-              digital e autonomia.
+              O Speaker Converter foi criado com foco em inclusão e
+              acessibilidade, utilizando tecnologias modernas para garantir
+              eficiência e facilidade de uso.
             </p>
             <p class="obj2">
-              Inspirado pela Lei Brasileira de Inclusão, o projeto visa criar um
-              site intuitivo e acessível que converte textos curtos em áudio,
-              permitindo
+              O backend foi desenvolvido com Django, enquanto o frontend usa
+              HTML, CSS, Bootstrap e JavaScript para uma interface responsiva.
+              Inicialmente com o banco de dados SQLite3, o projeto migrou para
+              MySQL para suportar mais usuários e dados. A conversão de texto em
+              áudio é feita pela API Amazon Polly, conhecida pela qualidade das
+              vozes. O design foi planejado no Figma e o site está hospedado no
+              PythonAnywhere, com controle de versão pelo GitHub. O projeto
+              superou desafios técnicos e atingiu seu objetivo, com melhorias
+              futuras planejadas.
             </p>
           </div>
         </div>

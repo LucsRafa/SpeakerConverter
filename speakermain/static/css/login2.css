@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Merienda&family=Modak&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1A313F;
+}
+
+header {
+    background-color: #FFA726;
+    padding: 1px;
+
+    align-items: center;
+    color: #1A313F;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+header .logo {
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+      font-size: 28px;
+      color: #FEFFFF;
+}
+p{
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+.image-logo{
+    width: 70px;
+    height: 70px;
+    background-image: url(./logoFundoAzul.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: -420px;
+    border-radius: 19px;
+}
+
+
+.logo{
+    position: relative;
+    right: -25px;
+}
+
+a{
+   padding: 6px;
+    align-items: end; 
+    font-size: 20px;
+}
+
+header ul {
+   margin: 1cm;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 180px;
+}
+
+header ul li {
+    display: inline;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #1A313F;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+}
+
+.left-section {
+    width: 950px;
+    background-color: #1A313F;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.left-section .image-placeholder {
+    
+    
+        width: 166px;
+        height: 197px;
+        background-image: url(./Foto.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        top: 119px;
+        margin-left: 41px;
+        
+    
+    
+}
+
+
+.right-section {
+    width: 400px;
+    background-color: #FEFFFF;
+    padding: 120px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-section h2 {
+    
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    margin-bottom: 5px;
+    color: #1A313F;
+    font-weight: bold;
+}
+
+form input {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.continue-btn {
+    background-color: #FFA726;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.social-btn {
+    background-color: #FFF;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.or {
+    text-align: center;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.erro {
+    color: #F44336;
+    margin-top: 10px;
+}
+.obj{
+   
+    width: 950px;
+    color: #FEFFFF;
+    font-size: 18px;
+    padding: 20px;
+    
+}
+.obj1 {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 180px;
+    margin-inline-end: 100px;
+    unicode-bidi: isolate;
+    color: #FEFFFF;
+    position: relative;
+    top: 10px;
+    margin-left: 211px;
+ 
+
+   
+}
+.obj2{
+    color: #FEFFFF;
+    margin-top: 6PX;
+    margin-left: 39px;
+    
+}
+.eye-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    font-size: 20px;
+    color: #1A313F;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+form input {
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+    padding-right: 30px; /* Espaço para o ícone */
+}

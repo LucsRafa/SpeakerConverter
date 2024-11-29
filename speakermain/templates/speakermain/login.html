@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
-{% load widget_tweaks %}
+{% load static %} {% load widget_tweaks %}
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +9,10 @@
     <link rel="icon" type="image/png" href="{% static 'favicon.png' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Audiowide&family=Merienda:wght@300..900&family=Modak&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -23,7 +25,7 @@
         <div class="image-logo"></div>
         <ul>
           <li><a href="{% url 'LoginView' %}">Sobre</a></li>
-          <li><a href="{% url 'empresa' %}">Empresa</a></li>
+          <li><a href="{% url 'empresa' %}">Projeto</a></li>
           <li><a href="{% url 'contato' %}">Contato</a></li>
         </ul>
       </nav>
@@ -35,29 +37,30 @@
           <div class="image-and-text">
             <div class="image-placeholder"></div>
             <p class="obj1">
-              O aplicativo "Speaker Converter" foi desenvolvido para facilitar o
-              acesso à informação para pessoas com deficiência visual e
-              estudantes com dificuldades de leitura, promovendo inclusão
-              digital e autonomia.
+              O Speaker Converter é um site desenvolvido para transformar textos
+              em áudio de forma prática e acessível. Foi criado especialmente
+              para auxiliar pessoas com deficiência visual, dificuldades de
+              leitura ou que preferem ouvir conteúdos.
             </p>
             <p class="obj2">
-              Inspirado pela Lei Brasileira de Inclusão, o projeto visa criar um
-              site intuitivo e acessível que converte textos curtos em áudio,
-              permitindo o download dos arquivos ou o armazenamento na nuvem.
-              Com uma interface amigável, o sistema busca reduzir barreiras de
-              leitura e ampliar oportunidades de aprendizado e inclusão.
-              Utilizando tecnologias como Django e a API Amazon Polly para
-              conversão de texto em áudio, o aplicativo oferece uma experiência
-              auditiva de qualidade e funcionalidades que auxiliam tanto na
-              educação quanto no lazer dos usuários, expandindo o acesso à
-              informação de forma prática e inclusiva.
+              Com uma interface intuitiva, o site permite colar textos, escolher
+              vozes personalizadas e baixar ou armazenar o áudio na nuvem,
+              tornando o acesso à informação mais ágil. Além de promover
+              inclusão digital, é útil para estudantes, profissionais e qualquer
+              pessoa que queira consumir conteúdos enquanto realiza outras
+              tarefas. Nosso objetivo é proporcionar uma experiência acessível e
+              inovadora
             </p>
           </div>
         </div>
 
         <div class="right-section">
           <center><h2>LOGIN</h2></center>
-          <form id="formulario-login" method="post" action="{% url 'LoginView' %}">
+          <form
+            id="formulario-login"
+            method="post"
+            action="{% url 'LoginView' %}"
+          >
             {% csrf_token %}
             <div>
               <label for="email">Usuário:</label>
@@ -66,11 +69,20 @@
             <div>
               <label for="senha">Senha:</label>
               <div class="password-container">
-                <input type="password" id="id_password" name="password" class="form-control" />
-                <i class="eye-icon fa fa-eye" id="eye-icon" onclick="togglePassword()"></i>
+                <input
+                  type="password"
+                  id="id_password"
+                  name="password"
+                  class="form-control"
+                />
+                <i
+                  class="eye-icon fa fa-eye"
+                  id="eye-icon"
+                  onclick="togglePassword()"
+                ></i>
               </div>
             </div>
-            
+
             <center>
               <button type="submit" class="continue-btn">Entrar</button>
             </center>

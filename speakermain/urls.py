@@ -14,4 +14,5 @@ urlpatterns = [
     path('empresa/', views.empresa_view, name='empresa'),
     path('contato/', views.contato_view, name='contato'),
     path('reset_password_form/', reset_password_form, name='reset_password_form'),
+    path('excluir-conta/', views.ExcluirContaView.as_view(), name='ExcluirContaView'),
 ]

@@ -18,21 +18,20 @@
             <div class="image-logo"></div>
             <ul>
                 <li><a href="{% url 'LoginView' %}">Sobre</a></li>
-                <li><a href="{% url 'empresa' %}">Empresa</a></li>
+                <li><a href="{% url 'empresa' %}">Projeto</a></li>
                 <li><a href="{% url 'contato' %}">Contato</a></li>
             </ul>
         </nav>
     </header>
-    
     <main>
         <section class="content">
-            <h2>Equipe:</h2>
+    
             <div class="team-container">
                 <div class="team-member">
+                    <h2 class="notafold">Desenvolvido pelos seguintes integrantes:</h2>
                    <center> <div class="photo member1"></div></center>
                     <p>Lucas Ladislau</p>
                     <div class="contact-links">
-                        <a href="Lucas.ladislau@fatec.sp.gov.br">Lucas.ladislau@fatec.sp.gov.br</a>
                         <a href="https://github.com/LucsRafa" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/lucas-ladislau-730750240/" target="_blank">LinkedIn</a>
                     </div>
@@ -41,7 +40,7 @@
                     <center> <div class="photo member2"></div></center>
                     <p>Kaua Asher</p>
                     <div class="contact-links">
-                        <a href="kaua.silva01@fatec.sp.gov.br">kaua.silva01@fatec.sp.gov.br</a>
+                       
                         <a href="https://github.com/kauaasher" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/member2" target="_blank">LinkedIn</a>
                     </div>
@@ -50,7 +49,7 @@
                    <center> <div class="photo member3"></div></center>
                     <p>Pedro Cavalcante</p>
                     <div class="contact-links">
-                        <a href="pedro.silva282@fatc.sp.gov.br">pedro.silva282@fatc.sp.gov.br</a>
+                      
                         <a href="https://github.com/daysources" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/pedro-henrique-cavalcante-da-silva-8a038829a/" target="_blank">LinkedIn</a>
                     </div>
@@ -59,12 +58,13 @@
                     <center><div class="photo member4"></div></center>
                     <p>Richard Godeia</p>
                     <div class="contact-links">
-                        <a href="richard.santos19@fatec.sp.gov.br">richard.santos19@fatec.sp.gov.br</a>
+                        
                         <a href="https://github.com/MerlinGxS" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/richard-godeia-417a07168/" target="_blank">LinkedIn</a>
                     </div>
                 </div>
             </div>
+           
             <div class="right-section">
                 <center><h2 class="log">LOGIN</h2></center>
                 <form id="formulario-login" method="post" action="{% url 'contato' %}">
@@ -101,6 +101,8 @@
             
          </section>
     </main>
+    <h2 class="notaRoda">Para dúvidas, sugestões ou mais informações, você pode entrar em contato pelo e-mail oficial do projeto: <a class="testeLink" href="mailto:projetoklpr@gmail.com">projetoklpr@gmail.com</a>.</h2>
+
     <script src="{% static 'js/eyeToggle.js' %}"></script>
 </body>
 </html>
