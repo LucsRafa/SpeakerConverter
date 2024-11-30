@@ -31,7 +31,7 @@
         </button>
         <!-- Menu com Encerrar Sessão -->
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{% url 'ExcluirContaView' %}">Excluir conta</a>
+            <a class="dropdown-item" href="#" onclick="confirmarExclusao(event, '{% url 'ExcluirContaView' %}')">Excluir conta</a>
             <a class="dropdown-item" href="{% url 'LogoutView' %}">Encerrar sessão</a>
         </div>
        
@@ -81,8 +81,10 @@
                 </audio>
             </div>
         </div>
-        <!-- Inclua o arquivo JavaScript -->
-        <script src="{% static 'js/filtroPesquisa.js' %}"></script>
-        <script src="{% static 'js/deleteFiles.js' %}"></script>
+       <!-- Corrigido: Removido script repetido -->
+<script src="{% static 'js/filtroPesquisa.js' %}"></script>
+<script src="{% static 'js/deleteFiles.js' %}"></script>
+<script src="{% static 'js/popup.js' %}"></script>
+
     </body>
 </html>

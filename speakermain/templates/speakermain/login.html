@@ -24,8 +24,8 @@
         <div class="logo">Speaker Converter</div>
         <div class="image-logo"></div>
         <ul>
-          <li><a href="{% url 'LoginView' %}">Sobre</a></li>
-          <li><a href="{% url 'empresa' %}">Projeto</a></li>
+          <li><a href="{% url 'LoginView' %}">Projeto</a></li>
+          <li><a href="{% url 'empresa' %}">Sobre</a></li>
           <li><a href="{% url 'contato' %}">Contato</a></li>
         </ul>
       </nav>
@@ -100,6 +100,13 @@
         </div>
       </section>
     </main>
+    
+    <script>
+      function confirmarExclusao() {
+          return confirm("Você tem certeza que deseja apagar sua conta? Essa ação não pode ser desfeita.");
+      }
+  </script>
+  
 
     <script src="{% static 'js/eyeToggle.js' %}"></script>
   </body>

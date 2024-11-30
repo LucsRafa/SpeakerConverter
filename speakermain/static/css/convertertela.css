@@ -38,7 +38,7 @@ h1 b {
     float: right;
     padding-right: 20;
     margin-top: 29px;
-    margin-right: 20px;
+    margin-right: 48px;
     padding-top: 40;
     color:#ffffff;
     font-family: Poppins;
@@ -47,13 +47,15 @@ h1 b {
 }
 
 .dropdown-menu {
-    max-width: 150px;
-    right: 50%;
-    transform: translateX(111%);
-    /*left: 50%;
-    transform: translateX(-50%);*/
-  }
+   
+        max-width: 150px;
+        right: 50%;
+        transform: translateX(-50%);
+        left: 50%;
+        transform: translateX(20%);
+    }
   
+
   .dropdown-item, .Conversor, .biblioteca {
     display: block;
     text-align: center;
@@ -156,4 +158,6 @@ button {
     outline: none; /* Remove borda ao clicar */
   
   }
-  
+  .dropdown-menu {
+    font-size: 16px;
+    }

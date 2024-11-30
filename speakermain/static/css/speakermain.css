@@ -241,4 +241,6 @@ a{
   outline: none; /* Remove borda ao clicar */
 
 }
-
+.dropdown-menu {
+font-size: 16px;
+}
